@@ -75,7 +75,7 @@ export default function PortfolioPage() {
       tags: ["Client-Work", "Expansion"],
       filter: "Client-Work",
       image: portImg6,
-      link: "#",
+      link: "https://grinard0071988.github.io/react-folio/#/",
     },
   ];
 
@@ -157,13 +157,14 @@ export default function PortfolioPage() {
                       >
                         <Plus size={24} />
                       </button>
-                      <NavLink
-                        to={item.link}
+                      <a
+                        href={item.link}
+                        target="_blank"
                         className="portfolioOverlayLink w-12 h-12 rounded-full flex items-center justify-center"
                         aria-label="View details"
                       >
                         <ExternalLink size={20} />
-                      </NavLink>
+                      </a>
                     </div>
                   </div>
                 </div>
