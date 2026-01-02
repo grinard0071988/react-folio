@@ -30,7 +30,7 @@ export default function PortfolioPage() {
       tags: ["Case-Studies", "Consulting"],
       filter: "Case-Studies",
       image: portImg1,
-      link: "#",
+      link: "https://grinard0071988.github.io/bankist-app/",
     },
     {
       id: 2,
@@ -66,7 +66,7 @@ export default function PortfolioPage() {
       tags: ["Client-Work", "Growth"],
       filter: "Client-Work",
       image: portImg5,
-      link: "#",
+      link: "https://stavigo.com/#/",
     },
     {
       id: 6,
