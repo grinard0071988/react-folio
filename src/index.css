@@ -1,0 +1,759 @@
+@import "tailwindcss";
+
+/* Fonts, Global color */
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+  --background-color: #101a20; /* Background color for the entire website, including individual sections */
+  --default-color: #e7f2f7; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #1387c1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #141f26; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  --nav-color: #ffffff; /* The default color of the main navmenu links */
+  --nav-hover-color: #1387c1; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #213642; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-color: #e7f2f7; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #1387c1;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+#style-body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 100px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.sectionTitle {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.sectionTitle h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--heading-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.sectionTitle p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  max-width: 900px;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+/*--------------------------------------------------------------
+# Skills Section
+--------------------------------------------------------------*/
+.skillBox {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.skillBox h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skillBox p {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.6;
+}
+
+/*--------------------------------------------------------------
+  #
+  Stats
+  Section
+  --------------------------------------------------------------*/
+.avatars {
+  position: relative;
+}
+
+.avatars img {
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--accent-color);
+  margin-right: -15px;
+  transition: transform 0.3s ease;
+}
+
+.avatars img:hover {
+  transform: translateY(-5px);
+  z-index: 2;
+}
+
+.counters h2 {
+  color: var(--heading-color);
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.counters h2 span {
+  display: inline-block;
+}
+
+.counters p {
+  color: var(--default-color);
+  font-size: 18px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+  .stats .row {
+    text-align: center;
+  }
+
+  .avatars {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .counters h2 {
+    font-size: 36px;
+  }
+
+  .counters p {
+    font-size: 16px;
+  }
+
+  .counters .col-md-4 {
+    margin-bottom: 30px;
+  }
+
+  .counters .col-md-4:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats {
+    padding: 60px 0;
+  }
+
+  .avatars {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .avatars img {
+    margin: 0 -8px;
+  }
+}
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials-carousel,
+.testimonials-slider {
+  overflow: hidden;
+}
+
+.testimonialContent {
+  border-left: 3px solid var(--accent-color);
+  padding-left: 30px;
+}
+.testimonialIcon {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.testimonialImg {
+  border-radius: 50%;
+  border: 4px solid var(--background-color);
+  margin: 0 auto;
+}
+
+.testimonialItem h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.testimonialItem h4 {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin: 0 0 10px 0;
+}
+
+/* .testimonialItem .stars i {
+  color: #ffc107;
+  margin: 0 1px;
+} */
+
+.testimonialItem p {
+  font-style: italic;
+}
+
+.swiper-wrapper {
+  height: auto;
+}
+
+.swiperPagination {
+  margin-top: 30px;
+  position: relative;
+}
+
+.swiperPaginationbullet {
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.swiperPaginationbulletactive {
+  background-color: var(--accent-color);
+}
+.btnSlider {
+  color: var(--accent-color);
+}
+/*--------------------------------------------------------------
+# Resume Section
+--------------------------------------------------------------*/
+.topBtn {
+  background-color: var(--accent-color);
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  transition: 0.3s ease-in-out;
+}
+.topBtn:hover {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  transition: 0.3s ease-in-out;
+}
+.genColor {
+  color: var(--accent-color);
+}
+.genBg {
+  background-color: var(--accent-color);
+}
+.progress {
+  height: 0.75rem;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border-radius: 1rem;
+  overflow: visible;
+}
+
+.progressBar {
+  background-color: var(--accent-color);
+  position: relative;
+  border-radius: 1rem;
+  width: 0;
+  transition: width 1s ease;
+}
+
+.progressBar::after {
+  content: attr(aria-valuenow) "%";
+  position: absolute;
+  right: 0;
+  top: -1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+.resumeBtn {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  transition: 0.3s ease-in-out;
+}
+.resumeBtn:hover {
+  background-color: var(--accent-color);
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  transition: 0.3s ease-in-out;
+}
+.mainBg {
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.serviceItem {
+  display: flex;
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
+}
+
+.serviceItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: var(--accent-color);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.serviceItem:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.serviceItem:hover::before {
+  transform: scaleY(1);
+}
+
+.serviceItem:hover .serviceIcon {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotateY(180deg);
+}
+
+.serviceItem:hover .serviceIconI {
+  transform: rotateY(180deg);
+}
+
+.serviceItem:hover .serviceLink {
+  transform: translateX(5px);
+}
+
+.serviceIcon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+.serviceIconI {
+  font-size: 2rem;
+  transition: transform 0.5s ease;
+}
+
+.serviceContent {
+  flex-grow: 1;
+}
+
+.serviceContenth3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.serviceContentp {
+  margin-bottom: 1.25rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.serviceLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.serviceLink span {
+  margin-right: 0.5rem;
+}
+
+.serviceLinkI {
+  transition: transform 0.3s ease;
+}
+
+.serviceLink:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolioFilters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.portfolioFiltersBtn {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+.portfolioFiltersBtn:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.portfolioFiltersBtnfilterActive {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.portfolioCard {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.portfolioCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolioCard:hover .portfolioImg .portfolioOverlay {
+  opacity: 1;
+}
+
+.portfolioCard:hover .portfolioImg img {
+  transform: scale(1.1);
+}
+
+.portfolioCard .portfolioImg {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolioCard .portfolioImg img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.portfolioOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.portfolioOverlayLink {
+  width: 45px;
+  height: 45px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.portfolioOverlayLink:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #fff 20%);
+  transform: translateY(-5px);
+}
+
+.portfolioInfo {
+  padding: 20px;
+}
+
+.portfolioInfo h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--heading-color);
+}
+
+.portfolioInfo p {
+  font-size: 0.9rem;
+  color: var(--default-color);
+  margin-bottom: 10px;
+}
+
+.portfolioTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolioTags span {
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+.btnPrimaryPort {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btnPrimaryPort:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.infoBox {
+  background-color: var(--surface-color);
+  padding: 3rem;
+  border-radius: 1rem;
+  height: 100%;
+}
+
+.infoBox h3 {
+  color: var(--contrast-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .infoBox h3 {
+    font-size: 1.75rem;
+  }
+}
+
+.infoBox p {
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.infoBox a {
+  color: var(--contrast-color);
+}
+
+@media (max-width: 992px) {
+  .infoBox {
+    padding: 1.5rem;
+  }
+}
+
+.infoItem {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem:last-child {
+  margin-bottom: 0;
+}
+
+.iconBox {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--surface-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.iconBoxI {
+  font-size: 1.5rem;
+  color: var(--contrast-color);
+}
+
+.infoItem:hover .iconBox {
+  background-color: var(--accent-color);
+}
+
+.content h4 {
+  color: var(--contrast-color);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.content p {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+.contactForm {
+  background-color: var(--surface-color);
+  padding: 3rem;
+  border-radius: 1rem;
+  height: 100%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 992px) {
+  .contactForm {
+    padding: 1.5rem;
+  }
+}
+
+.contactForm h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contactForm h3 {
+    font-size: 1.75rem;
+  }
+}
+
+.contactForm p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 2rem;
+}
+
+.formControl,
+.formSelect {
+  padding: 0.875rem 1.25rem;
+  border-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--default-color);
+}
+
+.formControl:focus,
+.formSelect:focus {
+  box-shadow: none;
+  border-color: var(--accent-color);
+}
+
+.formControl::placeholder,
+.formSelect::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.contactFormbtn {
+  background-color: color-mix(in srgb, var(--surface-color), transparent 80%);
+  color: var(--contrast-color);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+}
+
+.contactFormbtnIcon {
+  font-size: 1.25rem;
+}
+
+.contactFormbtn:hover {
+  background-color: color-mix(in srgb, var(--surface-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: var(--background-color);
+  transition: all 0.6s ease-out;
+  width: 100%;
+  height: 100vh;
+}
+
+#preloader:before,
+#preloader:after {
+  content: "";
+  position: absolute;
+  border: 4px solid var(--accent-color);
+  border-radius: 50%;
+  animation: animate-preloader 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+#preloader:after {
+  animation-delay: -0.5s;
+}
+
+@keyframes animate-preloader {
+  0% {
+    width: 10px;
+    height: 10px;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+    opacity: 1;
+  }
+
+  100% {
+    width: 72px;
+    height: 72px;
+    top: calc(50% - 36px);
+    left: calc(50% - 36px);
+    opacity: 0;
+  }
+}

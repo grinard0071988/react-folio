@@ -1,0 +1,107 @@
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  padding: 40px 0;
+  position: relative;
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 92%);
+}
+
+/* Copyright text */
+.copyright p {
+  margin-bottom: 0;
+}
+
+/* Social icons container */
+.socialLinks {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Social icon styles */
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+
+  margin: 0 5px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.socialLinks a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Credits text */
+.credits {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scrollTop {
+  background-color: var(--accent-color);
+}
+
+.scrollTopArrow {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scrollTop:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+/* .scrollTop.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px;
+} */
+.btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid;
+}
+
+.btnPrimary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+.btnPrimary:hover {
+  background: color-mix(in srgb, var(--accent-color), black 15%);
+  border-color: color-mix(in srgb, var(--accent-color), black 15%);
+  transform: translateY(-2px);
+}
+.arrowIcon {
+  color: var(--accent-color);
+}
+.navOnHover:hover {
+  color: var(--accent-color);
+}
