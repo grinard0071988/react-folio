@@ -8,6 +8,7 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
+import mapImg from "../assets/img/map/map-address.png";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -23,18 +24,23 @@ export default function ContactPage() {
     errorMessage: "",
   });
 
+  //business address coordinates
+  const address = {
+    lat: 51.6155,
+    lng: -0.064,
+    text: "163 Mendip Block Edmonton, London, United Kingdom, N9 0TB",
+  };
+
   const contactInfo = [
     {
       icon: MapPin,
       title: "Our Location",
       details: ["163 Mendip Block Edmonton", "UK,London N90TBC"],
-      color: "blue",
     },
     {
       icon: Phone,
       title: "Phone Number",
       details: ["+447438443247", "+2347065383436"],
-      color: "green",
     },
     {
       icon: Mail,
@@ -43,7 +49,6 @@ export default function ContactPage() {
         "grinardphpprogrammer007@gmail.com",
         "contact-grinardprog@yahoomail.com",
       ],
-      color: "purple",
     },
   ];
 
@@ -110,15 +115,6 @@ export default function ContactPage() {
     }
   };
 
-  const getColorClasses = (color) => {
-    const colors = {
-      blue: "bg-blue-100 text-blue-600",
-      green: "bg-green-100 text-green-600",
-      purple: "bg-purple-100 text-purple-600",
-    };
-    return colors[color] || colors.blue;
-  };
-
   return (
     <div className="bg-gray-50">
       {/* Contact Section */}
@@ -156,9 +152,7 @@ export default function ContactPage() {
                       className=" flex items-start space-x-4 p-4 rounded-xl"
                     >
                       <div
-                        className={`iconBox w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${getColorClasses(
-                          info.color
-                        )}`}
+                        className={`iconBox w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 `}
                       >
                         <info.icon className="iconBoxI " size={24} />
                       </div>
@@ -293,7 +287,8 @@ export default function ContactPage() {
                         size={20}
                       />
                       <span className="text-green-700 font-medium">
-                        Your message has been sent successfully. Thank you!
+                        Your message sent successfully,You can reach me with the
+                        details at leftside of this Page. Thank you!
                       </span>
                     </div>
                   )}
@@ -338,14 +333,24 @@ export default function ContactPage() {
 
           {/* Optional Map Section */}
           <div className="mt-12">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="aspect-video bg-gray-200 flex items-center justify-center">
+            <div className="rounded-2xl shadow-lg overflow-hidden">
+              <div
+                style={{ backgroundImage: `url(${mapImg})` }}
+                className="aspect-video bg-gray-200 flex items-center justify-center"
+              >
                 <div className="text-center">
-                  <MapPin className="mx-auto text-gray-400 mb-2" size={48} />
-                  <p className="text-gray-600">Map placeholder</p>
-                  <p className="text-sm text-gray-500">
-                    163 Mendip Block Edmonton", "UK,London N90TB
-                  </p>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${address.lat},${address.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mapLink font-medium text-sm"
+                  >
+                    <MapPin className="mx-auto text-gray-400 mb-2" size={48} />
+                    <p className="text-gray-600">Open in Google Map ▶️</p>
+                    <p className="text-sm text-gray-500">
+                      163 Mendip Block Edmonton", "UK,London N90TB
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>

@@ -757,3 +757,6 @@ section,
     opacity: 0;
   }
 }
+.mapLink {
+  color: var(--contrast-color);
+}
