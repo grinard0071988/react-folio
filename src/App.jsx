@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
-import AppLayout from "./AppLayout";
+//import AppLayout from "./AppLayout";
 
 import "./index.css";
 import AboutPage from "./components/about/AboutPage";
