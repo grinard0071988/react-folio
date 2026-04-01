@@ -28,25 +28,25 @@ export default function ContactPage() {
   const address = {
     lat: 51.6155,
     lng: -0.064,
-    text: "163 Mendip Block Edmonton, London, United Kingdom, N9 0TB",
+    text: "2343 Mendip Block Edmonton, London, United Kingdom",
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Our Location",
-      details: ["163 Mendip Block Edmonton", "UK,London N90TBC"],
+      details: ["2343 Mendip Block Edmonton", "UK,London"],
     },
     {
       icon: Phone,
       title: "Phone Number",
-      details: ["+447438443247", "+2347065383436"],
+      details: ["+447445447774", "+2347065834363"],
     },
     {
       icon: Mail,
       title: "Email Address",
       details: [
-        "grinardphpprogrammer007@gmail.com",
+        "contact-grinardprog001@yahoomail.com",
         "contact-grinardprog@yahoomail.com",
       ],
     },
