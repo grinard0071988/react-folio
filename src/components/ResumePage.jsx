@@ -31,10 +31,10 @@ export default function ResumePage() {
   ];
 
   const professionalSkills = [
-    { name: "Frontend Development", percentage: 95 },
-    { name: "Backend Development", percentage: 85 },
-    { name: "UI/UX Design", percentage: 90 },
-    { name: "Project Management", percentage: 80 },
+    { name: "Frontend Development" },
+    { name: "Backend Development" },
+    { name: "UI/UX Design" },
+    { name: "Project Management" },
   ];
 
   const experience = [
@@ -110,7 +110,7 @@ export default function ResumePage() {
             {/* Download Resume Button */}
             {/* <button className=" "> */}
             <a
-              href="/Code_SIBA_Resume_1.pdf"
+              href="#"
               target="_blank"
               className="topBtn inline-flex items-center px-6 py-3 font-medium rounded-lg"
             >
@@ -177,9 +177,6 @@ export default function ResumePage() {
                         <h4 className="text-lg font-semibold text-gray-900">
                           {skill.name}
                         </h4>
-                        <span className="text-sm font-bold genColor">
-                          {skill.percentage}%
-                        </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                         <div

@@ -33,21 +33,6 @@ export default function ServicesPage() {
     },
     {
       id: 2,
-      icon: Smartphone,
-      title: "Mobile App Solutions",
-      description:
-        "Mobile app solutions deliver user-friendly, high-performance applications tailored for iOS and Android platforms. They focus on intuitive design, seamless functionality, secure architecture, and scalable features to enhance user engagement, improve accessibility, and support business growth through innovative mobile experiences.",
-      color: "purple",
-      features: [
-        "iOS & Android development",
-        "Cross-platform solutions",
-        "App store optimization",
-        "Push notifications",
-        "In-app purchases",
-      ],
-    },
-    {
-      id: 3,
       icon: Palette,
       title: "UI/UX Design",
       description:
@@ -62,7 +47,7 @@ export default function ServicesPage() {
       ],
     },
     {
-      id: 4,
+      id: 3,
       icon: BarChart3,
       title: "E-Commerce/Business Solution",
       description:
@@ -76,23 +61,9 @@ export default function ServicesPage() {
         "Analytics & reporting",
       ],
     },
+
     {
-      id: 5,
-      icon: Cloud,
-      title: "Cloud Computing",
-      description:
-        "Cloud computing delivers scalable, secure, and cost-effective access to data, applications, and infrastructure over the internet. It enables flexibility, real-time collaboration, efficient resource management, and rapid deployment, helping businesses improve performance, reduce operational costs, and adapt quickly to changing technological demands.",
-      color: "cyan",
-      features: [
-        "Cloud migration",
-        "Infrastructure as code",
-        "Serverless architecture",
-        "Auto-scaling solutions",
-        "Cloud cost optimization",
-      ],
-    },
-    {
-      id: 6,
+      id: 4,
       icon: Shield,
       title: "Cybersecurity Solutions",
       description:
